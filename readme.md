@@ -11,12 +11,12 @@ ssh daint
 # inspect the module environment
 module list
 module avail
+printenv
 ```
 
-Further use of commands `module load` 
+The default environment is populated with an exhaustive list of modules, some modules are automatically loaded, and there are many environment variables that mediate the interactions at compile time and runtime.
 
-The first difference you will notice
-Log into eiger and 
+Log into eiger the first difference that we notice is that the CPE modules are not loaded automatically and the base environment is significantly simpler:
 
 ```bash
 ssh eiger
@@ -34,7 +34,6 @@ module avail
 The default environment on Alps clusters is much simpler than on Daint.
 
 ## Using user environments
-
 
 On eiger, let's start a user-environment for GROMACS
 
