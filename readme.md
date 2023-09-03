@@ -47,7 +47,8 @@ uenv start /scratch/e1000/bcumming/gromacs-eiger.squashfs
 uenv status
 ```
 
-The output of `uenv status` shows information about the currently loaded 
+The output of `uenv status` shows information about the currently loaded
+
 ```
 /user-environment:gromacs-multicore
   Gromacs with and without Plumed, and the toolchain to build your own Gromacs for multicore
@@ -95,16 +96,14 @@ git clone https://github.com/gromacs/gromacs.git
 (cd gromacs; git checkout 631f42ed83e3524e12cbee11821a4b537ebf1c57)
 ```
 
+```
 mkdir build
 cd build
 CC=mpicc CXX=mpicxx cmake -DGMX_MPI=yes  -DCMAKE_INSTALL_PREFIX=$SCRATCH/gmx-custom/install ../gromacs
 
 # focus on how Python3, OpenBLAS, etc are found
-
 make install -j32
-
 source $SCRATCH/gmx-custom/install/bin/GMXRC.bash
-
 gmx_mpi --version
 ```
 
